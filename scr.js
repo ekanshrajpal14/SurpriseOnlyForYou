@@ -10,7 +10,7 @@ var bgMusicURL = 'Teri.mp3';
 var bgMusicControls = true; // Show UI music control
 
 // window.addEventListener("load", function (e) {
-  
+
 // })
 
 // ===================== start =======================
@@ -42,21 +42,21 @@ function init(delayTime) {
 
 function applyTranform(obj) {
   // Constrain the angle of camera (between 0 and 180)
-  if(tY > 180) tY = 180;
-  if(tY < 0) tY = 0;
+  if (tY > 180) tY = 180;
+  if (tY < 0) tY = 0;
 
   // Apply the angle
   obj.style.transform = "rotateX(" + (-tY) + "deg) rotateY(" + (tX) + "deg)";
 }
 
 function playSpin(yes) {
-  ospin.style.animationPlayState = (yes?'running':'paused');
+  ospin.style.animationPlayState = (yes ? 'running' : 'paused');
 }
 
 var sX, sY, nX, nY, desX = 0,
-    desY = 0,
-    tX = 0,
-    tY = 10;
+  desY = 0,
+  tX = 0,
+  tY = 10;
 
 // auto spin
 if (autoRotate) {
@@ -65,30 +65,33 @@ if (autoRotate) {
 }
 
 // add background music
-window.addEventListener("load",function(){
+// window.addEventListener("load",function(){
 
-  if (bgMusicURL) {
-    document.getElementById('music-container').innerHTML += `
-    <audio src="${bgMusicURL}" ${bgMusicControls? 'controls': '' }  autoplay loop/>    
+//   if (bgMusicURL) {
+//     document.getElementById('music-container').innerHTML += `
+//     <audio src="${bgMusicURL}" ${bgMusicControls? 'controls': '' }  autoplay loop/>    
+//     `;
+//   }
+//   if (window.innerWidth < 700) {
+//     alert("Please open this in your laptop or pc....Ye sirf laptop m hi khulega kyuki kuch speical hai na isliye...Sorry apse thodi mehnat krwa rha hu🤪");
+//     location.reload()
+//   }
+// })
+document.getElementById('music-container').innerHTML += `
+    <audio src="${bgMusicURL}" ${bgMusicControls ? 'controls' : ''}  autoplay loop/>    
     `;
-  }
-  if (window.innerWidth < 700) {
-    alert("Please open this in your laptop or pc....Ye sirf laptop m hi khulega kyuki kuch speical hai na isliye...Sorry apse thodi mehnat krwa rha hu🤪");
-    location.reload()
-  }
-})
 
 // setup events
 document.onpointerdown = function (e) {
   clearInterval(odrag.timer);
   e = e || window.event;
   var sX = e.clientX,
-      sY = e.clientY;
+    sY = e.clientY;
 
   this.onpointermove = function (e) {
     e = e || window.event;
     var nX = e.clientX,
-        nY = e.clientY;
+      nY = e.clientY;
     desX = nX - sX;
     desY = nY - sY;
     tX += desX * 0.1;
@@ -117,7 +120,7 @@ document.onpointerdown = function (e) {
   return false;
 };
 
-document.onmousewheel = function(e) {
+document.onmousewheel = function (e) {
   e = e || window.event;
   var d = e.wheelDelta / 20 || -e.detail;
   radius += d;
