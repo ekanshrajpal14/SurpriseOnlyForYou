@@ -65,21 +65,20 @@ if (autoRotate) {
 }
 
 // add background music
-// window.addEventListener("load",function(){
-
-//   if (bgMusicURL) {
-//     document.getElementById('music-container').innerHTML += `
-//     <audio src="${bgMusicURL}" ${bgMusicControls? 'controls': '' }  autoplay loop/>    
-//     `;
-//   }
-//   if (window.innerWidth < 700) {
-//     alert("Please open this in your laptop or pc....Ye sirf laptop m hi khulega kyuki kuch speical hai na isliye...Sorry apse thodi mehnat krwa rha hu🤪");
-//     location.reload()
-//   }
-// })
+window.addEventListener("load",function(w){
+    // console.log(window);
+    
+  
+  if (window.outerWidth < 700) {
+    alert("Please open this in your laptop or pc....Ye sirf laptop m hi khulega kyuki kuch speical hai na isliye...Sorry apse thodi mehnat krwa rha hu🤪");
+    location.reload()
+  }
+})
 document.getElementById('music-container').innerHTML += `
     <audio src="${bgMusicURL}" ${bgMusicControls ? 'controls' : ''}  autoplay loop/>    
     `;
+
+    
 
 // setup events
 document.onpointerdown = function (e) {
