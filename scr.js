@@ -70,8 +70,12 @@ window.addEventListener("load",function(w){
     
   
   if (window.outerWidth < 700) {
+   
     alert("Please open this in your laptop or pc....Ye sirf laptop m hi khulega kyuki kuch speical hai na isliye...Sorry apse thodi mehnat krwa rha hu🤪");
     location.reload()
+  }
+  else{
+    document.body.style.display = "flex"
   }
 })
 document.getElementById('music-container').innerHTML += `
