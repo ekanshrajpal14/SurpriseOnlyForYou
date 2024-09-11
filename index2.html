@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        #dragger,
+        #ring,
+        .img,
+        .vignette {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            user-select: none;
+        }
+
+        html,
+        body {
+            overflow: hidden;
+            background: #000;
+        }
+
+        div {
+            
+            position: absolute;
+        }
+
+        .container {
+            perspective: 2000px;
+            width: 300px;
+            height: 300px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .vignette {
+            width: 1400px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to left, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 88%);
+        }
+        .img{
+            background-color: aquamarine;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<h1 style="color: #fff; position: absolute;left: 1% ;top: 10%; z-index: 999;">Made By Ekansh</h1>
+    
+<p  class="para" style="color: #fff;transform: translate(-50%,-50%);position: absolute;
+top: 50%;left: 50%; transform: 1s; ">जब यह चांद अधूरा आता है ,<br>
+मुझे बस एक ही ज़िक्र याद आता है ,<br>
+कि यह चांद इस चांद से कितना शर्माता है!</p>
+<a href="/index.html" style="font-size: 1.2vw; position: absolute; right: 5%;
+top: 5%; color: #fff;">Back to previous</a>
+<audio src="iraaday.mp3" autoplay controls loop style="opacity: 0;"></audio>
+    <div class="container">
+        <div id="ring">
+
+            <div class="img">
+                <img src="./Gunjan/1726051185941.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051185952.jpg" alt="">
+
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051185962.jpg" alt="">
+
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051185973.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051185984.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051185996.jpg" alt="">
+
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186008.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186019.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186030.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186042.jpg" alt="">
+            </div>
+
+            <div class="img">
+            <img src="./Gunjan/1726051186053.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186064.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186075.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186085.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186096.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186107.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186118.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186128.jpg" alt="">
+            </div>
+            <div class="img">
+                <img src="./Gunjan/1726051186140.jpg" alt="">
+            </div>
+            <div class="img"><img src="./Gunjan/1726051186153.jpg" alt=""></div>
+
+
+        </div>
+    </div>
+    <!-- <div class="vignette"></div> -->
+
+    <div id="dragger"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"
+        integrity="sha512-BrvVYNhKh6yST24E5DY/LopLO5d+8KYmIXyrpBIJ2PK+CyyJw/cLSG/BfJomWLC1IblNrmiJWGlrGueKLd/Ekw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+
+setInterval((e) => {
+    var r = Math.floor(Math.random() * 255);
+    var g = Math.floor(Math.random() * 255);
+    var b = Math.floor(Math.random()*255);
+    
+     
+    document.querySelector(".para").style.color = `rgb(${r}, ${g}, ${b})`
+    
+}, 500);
+
+         window.addEventListener("load", function (e) {
+                if (window.innerWidth < 700) {
+                    alert("Please open this in your laptop or pc....Ye sirf laptop m hi khulega kyuki kuch speical hai na isliye...Sorry apse thodi mehnat krwa rha hu🤪");
+                    location.reload()
+                }
+            })
+        let xPos = 0;
+
+        gsap.timeline()
+            .set(dragger, { opacity: 0 }) //make the drag layer invisible
+            .set(ring, { rotationY: 180 }) //set initial rotationY so the parallax jump happens off screen
+            .set(ring, { rotationX: 15 })
+            .set('.img', { // apply transform rotations to each image
+                rotateY: (i) => i * -18,
+                transformOrigin: '50% 50% 1000px',
+                z: -1000,
+                // backgroundImage: (i) => 'url(https://picsum.photos/id/' + (i + 32) + '/700/300/)',
+                // backgroundPosition: (i) => getBgPos(i),
+                // backfaceVisibility:'hidden'
+            })
+            .from('.img', {
+                duration: 1.5,
+                y: 200,
+                opacity: 0,
+                stagger: 0.1,
+                ease: 'expo'
+            })
+
+        Draggable.create(dragger, {
+
+            onDragStart: (e) => {
+                if (e.touches) e.clientX = e.touches[0].clientX;
+                xPos = Math.round(e.clientX);
+            },
+
+            onDrag: (e) => {
+                if (e.touches) e.clientX = e.touches[0].clientX;
+
+                gsap.to(ring, {
+                    rotationY: '-=' + ((Math.round(e.clientX) - xPos) % 360),
+                    onUpdate: () => { gsap.set('.img', { backgroundPosition: (i) => getBgPos(i) }) }
+                });
+
+                xPos = Math.round(e.clientX);
+            },
+
+            onDragEnd: () => {
+               
+                gsap.set(dragger, { x: 0, y: 0 }) 
+            }
+
+        })
+
+
+        function getBgPos(i) { //returns the background-position string to create parallax movement in each image
+            return (-gsap.utils.wrap(0, 360, gsap.getProperty(ring, 'rotationY') - 180 - i * 18) / 360 * 400) + 'px 0px';
+        }
+    </script>
+</body>
+
+</html>

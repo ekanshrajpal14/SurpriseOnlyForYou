@@ -2,165 +2,84 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        html,
-        body,
-        #dragger,
-        #ring,
-        .img,
-        .vignette {
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            user-select: none;
-        }
+  <meta charset="UTF-8">
+  <title>College Wishlist - 3D carousel</title>
+  <link rel="stylesheet" href="./style.css">
 
-        html,
-        body {
-            overflow: hidden;
-            background: #000;
-        }
-
-        div {
-            position: absolute;
-        }
-
-        .container {
-            perspective: 2000px;
-            width: 300px;
-            height: 300px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .vignette {
-            width: 1400px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(to left, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 88%);
-        }
-        .img{
-            background-color: aquamarine;
-            img{
-                width: 100%;
-                height: 100%;
-                aspect-ratio: 1/1;
-            }
-        }
-        
-    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div id="ring">
+<h1 style="color: #fff; position: absolute;left: 1% ;top: 1%; z-index: 999; font-family: Arial, Helvetica, sans-serif;  font-size: 1.2vw;">Made By Ekansh</h1>
 
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-
-            <div class="img">
-                <img src="https://images.unsplash.com/photo-1588129582944-e2e5297b854a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFuZCUyMGNydWlzZXJ8ZW58MHwwfDB8fHwy" alt="">
-            </div>
-            <div class="img">
-                <img src="https://images.unsplash.com/photo-1588129582944-e2e5297b854a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFuZCUyMGNydWlzZXJ8ZW58MHwwfDB8fHwy"
-                    alt="">
-            </div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
-            <div class="img"></div>
+  <!-- partial:index.partial.html -->
+   <a href="/index2.html" style="color: white;position: absolute;top: 5%;left: 50%; transform: translate(-50%,-50%); font-family: Arial, Helvetica, sans-serif; font-size: 1.2vw;">After Exploring this. Click me for one more surprise</a>
+  <p style="color: white;position: absolute;top: 60%;left: 2.5%;font-family: Arial, Helvetica, sans-serif; font-size: 1.2vw;">U can rotate by dragging it <br>U can also zoom it</p>
+  <p style="color: #d4ff83;position: absolute; bottom: 10%;right: 5%; font-family: Arial, Helvetica, sans-serif; font-size: 1.2vw;line-height: 3vw;">कुछ इस तरह से वो मुस्कुराते हैं ,<br>
+  कि परेशान लोग उन्हें देख कर खुश हो जाते हैं ,<br>
+  उनकी बातों का अजी क्या कहिये,<br>
+  अल्फ़ाज़ फूल बनकर होंठों से निकल आते हैं! <br></p>
+   <div id="drag-container">
+    <div id="spin-container">
+      <img src="./Gunjan/1726051185941.jpg" alt="">
+      <img src="./Gunjan/1726051185952.jpg" alt="">
+      <img src="./Gunjan/1726051186042.jpg" alt="">
+      <img src="./Gunjan/1726051185962.jpg" alt="">
+      <img src="./Gunjan/1726051186008.jpg" alt="">
+      <img src="./Gunjan/1726051186064.jpg" alt="">
+      <img src="./Gunjan/1726051186030.jpg" alt="">
+      <img src="./Gunjan/1726051186153.jpg" alt="">
 
 
-        </div>
+      <!-- <video controls autoplay="autoplay" loop>
+        <source src="./imgs/29.mp4" type="video/mp4">
+      </video> -->
+
+      <!-- Text at center of ground -->
+      <p> Heyy! <mark>Kurnika</mark>
+        Kesa laga ye?</p>
     </div>
-    <!-- <div class="vignette"></div> -->
+    <div id="ground"></div>
+  </div>
 
-    <div id="dragger"></div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"
-        integrity="sha512-BrvVYNhKh6yST24E5DY/LopLO5d+8KYmIXyrpBIJ2PK+CyyJw/cLSG/BfJomWLC1IblNrmiJWGlrGueKLd/Ekw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <div id="music-container">
+    
+  </div>
 
 
-    <script>
-         window.addEventListener("load", function (e) {
-                if (window.innerWidth < 700) {
-                    alert("Please open this in your laptop or pc....Ye sirf laptop m hi khulega kyuki kuch speical hai na isliye...Sorry apse thodi mehnat krwa rha hu🤪");
-                    location.reload()
-                }
-            })
-        let xPos = 0;
+  <style>
+    .github-corner:hover .octo-arm {
+      animation: octocat-wave 560ms ease-in-out
+    }
 
-        gsap.timeline()
-            .set(dragger, { opacity: 0 }) //make the drag layer invisible
-            .set(ring, { rotationY: 180 }) //set initial rotationY so the parallax jump happens off screen
-            .set(ring, { rotationX: 15 })
-            .set('.img', { // apply transform rotations to each image
-                rotateY: (i) => i * -18,
-                transformOrigin: '50% 50% 1000px',
-                z: -1000,
-                // backgroundImage: (i) => 'url(https://picsum.photos/id/' + (i + 32) + '/700/300/)',
-                // backgroundPosition: (i) => getBgPos(i),
-                // backfaceVisibility:'hidden'
-            })
-            .from('.img', {
-                duration: 1.5,
-                y: 200,
-                opacity: 0,
-                stagger: 0.1,
-                ease: 'expo'
-            })
+    @keyframes octocat-wave {
 
-        Draggable.create(dragger, {
+      0%,
+      100% {
+        transform: rotate(0)
+      }
 
-            onDragStart: (e) => {
-                if (e.touches) e.clientX = e.touches[0].clientX;
-                xPos = Math.round(e.clientX);
-            },
+      20%,
+      60% {
+        transform: rotate(-25deg)
+      }
 
-            onDrag: (e) => {
-                if (e.touches) e.clientX = e.touches[0].clientX;
+      40%,
+      80% {
+        transform: rotate(10deg)
+      }
+    }
 
-                gsap.to(ring, {
-                    rotationY: '-=' + ((Math.round(e.clientX) - xPos) % 360),
-                    onUpdate: () => { gsap.set('.img', { backgroundPosition: (i) => getBgPos(i) }) }
-                });
+    @media (max-width:500px) {
+      .github-corner:hover .octo-arm {
+        animation: none
+      }
 
-                xPos = Math.round(e.clientX);
-            },
+      .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+      }
+    }
+  </style>
+  <!-- partial -->
+  <script src="./scr.js"></script>
 
-            onDragEnd: () => {
-               
-                gsap.set(dragger, { x: 0, y: 0 }) 
-            }
-
-        })
-
-
-        function getBgPos(i) { //returns the background-position string to create parallax movement in each image
-            return (-gsap.utils.wrap(0, 360, gsap.getProperty(ring, 'rotationY') - 180 - i * 18) / 360 * 400) + 'px 0px';
-        }
-    </script>
 </body>
-
-</html>
